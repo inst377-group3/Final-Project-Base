@@ -6,7 +6,7 @@ import configOptions from './config.js';
 import modelList from '../models/index.js';
 
 const { DataTypes } = Sequelize;
-const env = dotenv.config().parsed.NODE_ENV || 'development';
+const env = dotenv.config().parsed?np.NODE_ENV || 'development';
 const config = configOptions[env];
 
 /**
