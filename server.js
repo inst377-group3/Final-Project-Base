@@ -11,6 +11,7 @@ const __dirname = path.resolve();
 const app = express();
 
 const PORT = process.env.PORT || 3000;
+const project = 'Final-Project-Base';
 const staticFolder = 'client';
 const envConfig = dotenv.config().parsed?.NODE_ENV;
 let liveReloadServer;
@@ -19,7 +20,7 @@ let liveReloadServer;
 // auto reloading
 if (process.env.NODE_ENV === 'development') {
   liveReloadServer = reload.createServer();
-  liveReloadServer.watch(path.join(__dirname, staticFolder));
+  liveReloadServer.watch(path.join(project, __dirname, staticFolder));
 }
 
 app.use((req, res, next) => {
