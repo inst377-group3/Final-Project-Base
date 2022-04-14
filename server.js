@@ -12,7 +12,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 const staticFolder = 'client';
-const envConfig = dotenv.config().parsed.NODE_ENV;
+const env = dotenv.config().parsed?.NODE_ENV || 'development'
 let liveReloadServer;
 
 // console.log(a);
