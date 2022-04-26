@@ -604,7 +604,7 @@ footer div {
 /* Sign Up Modal
 ================================================================ */
 
-.sign_up_modal {
+.edit_modal {
     position: absolute;
     width: 434px;
     height: 524px;
@@ -624,7 +624,7 @@ footer div {
     border-radius: 4px; 
 }
 
-.sign_up_form {
+.edit_form {
     position: static;
     width: 323px;
     height: 299px;
@@ -642,11 +642,11 @@ footer div {
     margin: 32px 0px;
 }
 
-.sign_up_form > .form_row {
+.edit_form > .form_row {
     margin-bottom: 16px;
 }
 
-.sign_up_form > .form_row > input {
+.edit_form > .form_row > input {
     width: 323px;
     height: 49px;
 
@@ -768,3 +768,119 @@ footer div {
     margin: 20px;
 }
 
+
+.post-options {
+    padding: 4px;
+    flex-direction: row;
+}
+
+
+.edit_modal {
+    position: absolute;
+    width: 434px;
+    height: 524px;
+    z-index: 2;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 54px 0px;
+    
+    
+    background: #FFFFFF;
+    border: 2px solid #66516E;
+    border-radius: 4px; 
+}
+
+.edit_form {
+    position: static;
+    width: 323px;
+    height: 299px;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 32px 0px;
+}
+
+.edit_form > .form_row {
+    margin-bottom: 16px;
+}
+
+.edit_form > .form_row > input {
+    width: 323px;
+    height: 49px;
+
+    display: flex;
+    align-items: center;
+    padding: 0px 0px 0px 16px;
+
+    background: #FFFFFF;
+    
+
+    border: 2px solid #333;
+    box-shadow: none;
+    border-radius: 4px;
+}
+
+.form_row.buttons {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.form_row.buttons button {
+    width: 150px;
+    height: 49px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px; 
+
+    background: #DBAEEC;
+    border: 2px solid #333;
+    box-shadow: none;
+    border-radius: 4px;
+}
+
+#cancel {
+    background: #fff;
+    border: 2px solid #66516E;
+}
+
+.delete {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    margin-top: 16px;
+}
+
+.editor_modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+  }
