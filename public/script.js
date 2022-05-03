@@ -144,7 +144,10 @@ export function clearTree(){
         displayArea.removeChild(displayArea.firstChild)
     }
 }
-// d3.js code in here:
+////////////////////////////////////////////////////////////////
+///// d3.js code in here: //////////////////////////////////////
+////////////////////////////////////////////////////////////////
+// Species Query
 export function displayTree() {
     if (sessionStorage.getItem('query') === null) {
       console.log('No tree data, waiting..')
@@ -224,8 +227,8 @@ export function displayTree() {
         // appending image url to the node
         node.append('image')
             .attr("href", function (d) { return d.data.image + '?width=300px' })
-            .attr('x', '-20')
-            .attr('y', '-60')
+            .attr('x', '0')
+            .attr('y', '0')
             //.attr('transform', 'rotate(90)')
         // rotates elements horizontally
         //svg.attr('transform', 'rotate(-90)')
@@ -298,6 +301,9 @@ async function retrieveHistory() {
         ).then(console.log('retrieveHistory() complete.')).catch((e) => console.log(e))
     }
 }
+
+
+// Search 
 async function displayEach(searchItem, index) {
     if (document.querySelector('.saved').children.length > index) {
         return;
@@ -376,9 +382,9 @@ async function displayEach(searchItem, index) {
         // appending image url to the node
         node.append('image')
             .attr("href", function (d) { return d.data.image + '?width=300px' })
-            .attr('x', '-20')
-            .attr('y', '-60')
-            //.attr('transform', 'rotate(90)')
+            // .attr('x', '-20')
+            // .attr('y', '-60')
+            // .attr('transform', 'rotate(90)')
         // rotates elements horizontally
         //svg.attr('transform', 'rotate(-90)')
             return;

@@ -880,6 +880,7 @@ footer div {
 ================================================================ */
 .query {
   display: block;
+  position: relative;
   max-width: 323px;
   height: 337px;
   
@@ -889,31 +890,49 @@ footer div {
   overflow: scroll;  
 }
 
+g {
+  width: 200%;
+  color: red;
+}
+
 .node circle {
   fill: #fff;
-  stroke: steelblue;
+  stroke: #66516E;
   stroke-width: 3px;
 }
 
 .node image {
   opacity: 0;
+
+  border: 1px solid #000;
+  border-radius: 4px;
 }
 
 .node:hover image {
+  /* position: absolute;
+  top: 0; */
+
+  /* 'x' controls the x cooridinates */
+  /* x: -50%; */
+
+
   height: auto;
   width: 250px;
   z-index: 10;
-  opacity: 1;
+  opacity: 1; 
+
+
 }
 
 .node.node--internal text { 
-  color: lightgrey;
-  opacity: 0;
+  color: #DBAEEC;
+  opacity: 1;
 }
 
 .node.node--internal circle { 
   r: 4px;
 }
+
 .node.node--internal:hover text {
   color: black;
   opacity: 1;
@@ -925,9 +944,19 @@ footer div {
   opacity: 1;
 }
 
+/* select the image within every other g */
+.node:nth-child(odd):hover image {
+  x: 10%;
+}
+
+.node.node--internal:nth-child(even):hover image {
+  x: -50%;
+}
+
+
 .link {
   fill: none;
-  stroke: #ccc;
+  stroke: #DBAEEC;
   stroke-width: 2px;
 }
 
@@ -940,9 +969,16 @@ svg {
 }
 
 g image {
+  /* relative to the node */
+
+  position: absolute;
+  top: 0;
   height: auto;
   width: 40px;
+
+  border-radius: 4px;
 }
+
 
 .delete {
   background-color: maroon;
