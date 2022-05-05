@@ -1,0 +1,11 @@
+.node--internal {
+    display: none;
+}
+.node--leaf {
+    display: none;
+}
+
+.node--root {
+    display: flex;
+    border: 1px solid #000;
+}

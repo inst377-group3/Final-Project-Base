@@ -41,6 +41,7 @@ function loadUser() {
     }
 
 }
+
 // stores data to session
 async function storeSession(userData) {
     if (typeof userData === 'undefined') {
@@ -315,6 +316,19 @@ async function displayEach(searchItem, index) {
     // editBtn.style.transform = 'translate(70px, -30px)'
     
     newNode.appendChild(editBtn)
+
+    let box = document.createElement("div");
+    box.className = 'saved_result_card';
+    box.appendChild(newNode);
+    console.log(box);
+    // let parentDiv = document.querySelector(".node image").parentNode;
+    // let c_node = document.querySelector(".node image");
+    // parentDiv.insertBefore(newNode, c_node);
+    // newNode.appendChild(c_node);
+
+
+
+
     //editBtn.id = searchTree.
     container.appendChild(newNode)
     var margin = {top: 40, right: 20, bottom: 80, left: 20},
@@ -339,16 +353,40 @@ async function displayEach(searchItem, index) {
                 .attr("transform",
                     "translate(" + margin.left + "," + margin.top + ")");
         // adds the links between the nodes
-        var link = g.selectAll(".link")
-            .data( nodes.descendants().slice(1))
-            .enter().append("path")
-            .attr("class", "link")
-            .attr("d", function(d) {
-                return "M" + d.x + "," + d.y
-                + "C" + d.x + "," + (d.y + d.parent.y) / 2
-                + " " + d.parent.x + "," +  (d.y + d.parent.y) / 2
-                + " " + d.parent.x + "," + d.parent.y;
-                });
+        // var link = g.selectAll(".link")
+        //     .data( nodes.descendants().slice(1))
+        //     .enter().append("path")
+        //     .attr("class", "link")
+        //     .attr("d", function(d) {
+        //         return "M" + d.x + "," + d.y
+        //         + "C" + d.x + "," + (d.y + d.parent.y) / 2
+        //         + " " + d.parent.x + "," +  (d.y + d.parent.y) / 2
+        //         + " " + d.parent.x + "," + d.parent.y;
+        //         });
+
+
+        // var node = g.selectAll(".node")
+        // .attr("class", function(d){
+        //     if (d.parent == "null"){
+        //       return "node parent"//since its root its parent is null
+        //     } else
+        //       return "node child"//all nodes with parent will have this class
+        //   })
+
+        //     .data(nodes.descendants())
+        //     .enter().append("g")
+        //     .attr("class", function(d) { 
+        //         //console.log(d);
+        //         return d.parent ? "" : "-root";
+        //         console.log(nodes);
+        //     })
+        // node.append('image')
+        // .attr("href", function (d) { return d.data.image + '?width=300px' })
+        // .attr('x', '-20')
+        // .attr('y', '-60')
+
+        // console.log("this yo" + nodes);
+
 
         // adds each node as a group
         var node = g.selectAll(".node")
@@ -382,8 +420,10 @@ async function displayEach(searchItem, index) {
             //.attr('transform', 'rotate(90)')
         // rotates elements horizontally
         //svg.attr('transform', 'rotate(-90)')
-            return;
+
+                
         }
+               
 
 async function displayPastSearches() {
     console.log('Retrieving past searches.')
@@ -392,7 +432,10 @@ async function displayPastSearches() {
         .map(key => sessionStorage.getItem(key))
         .forEach((search, index) => {
             displayEach(search, index)});
+
 }
+
+
 
 function main() {
   retrieveHistory().then(() => {
@@ -478,6 +521,9 @@ function main() {
             displayPastSearches()
         })
     })
+
 }
+
+
 
 document.addEventListener('DOMContentLoaded', await main);
