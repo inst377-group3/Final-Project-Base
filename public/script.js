@@ -196,6 +196,11 @@ export function displayTree() {
                 + " " + d.parent.x + "," + d.parent.y;
                 });
 
+
+
+
+
+
         // adds each node as a group
         var node = g.selectAll(".node")
             .data(nodes.descendants())
@@ -232,7 +237,24 @@ export function displayTree() {
             //.attr('transform', 'rotate(90)')
         // rotates elements horizontally
         //svg.attr('transform', 'rotate(-90)')
+
+
+        // TODO: 
+        // - insert a parent div on each node
+
+        // This is only wraps the first node
+        // also makes the node disappear
+
+        // let newNode = document.createElement("div");
+        // newNode.classList.add('p_node');
+        // let parentDiv = document.querySelector(".node image").parentNode;
+        // let c_node = document.querySelector(".node image");
+        // parentDiv.insertBefore(newNode, c_node);
+        // newNode.appendChild(c_node);
+
             return;
+
+            
 }
 
 async function saveQuery(e) {
@@ -471,13 +493,14 @@ function main() {
     //     return;
     // })
     // search bar
+    // saveQuery keyword was already being used 
     document.querySelector('.species_form').addEventListener('submit', async (e) => {
         wikiSearch(e)
-        saveQuery.style.display = 'flex';
+        saveQuery1.style.display = 'flex';
     })
-    const saveQuery = document.querySelector('.save-query')
-    saveQuery.style.display = 'none'
-   saveQuery.addEventListener('click', async (e) => {
+    const saveQuery1 = document.querySelector('.save-query')
+    saveQuery1.style.display = 'none'
+   saveQuery1.addEventListener('click', async (e) => {
         // if there are currently elements inside the query container
         if (document.querySelector('.query').firstChild) {
             saveQuery(e);

@@ -892,9 +892,13 @@ footer div {
   overflow: scroll;  
 }
 
-g {
-  width: 200%;
-  color: red;
+svg {
+
+  margin: .4rem;
+  border: #fff;
+  border-radius: 24px;
+  background-color: #fff;
+  overflow: visible;
 }
 
 .node circle {
@@ -955,13 +959,6 @@ g {
   stroke-width: 2px;
 }
 
-svg {
-  margin: .4rem;
-  border: #fff;
-  border-radius: 24px;
-  background-color: #fff;
-  overflow: visible;
-}
 
 g image {
   /* relative to the node */
@@ -988,7 +985,18 @@ g image {
     align-items: center;
 }
 
+
+
 @media screen and (min-width: 800px){
+  .result-container {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
   .query {
       height: 1000px;
       max-width: none;
@@ -996,7 +1004,109 @@ g image {
 
       display: flex;
       justify-content: center;
-
+      margin-top: 24px;
       overflow: auto;
   } 
+
+  svg {
+    margin: .4rem;
+    border: #fff;
+    border-radius: 24px;
+    background-color: #fff;
+    overflow: visible;
+  }
+
+  .node {
+    width: 32px;
+  }
+
+  g {
+    width: 16px;
+    height: 16px;
+    border: solid 1px #000;
+  }
+
+  /* .p_node {
+    display: block;
+    opacity: 1;
+    width: 100%;
+  } */
+
+  .node circle {
+    fill: #fff;
+    stroke: #66516E;
+    stroke-width: 3px;
+  }
+
+  .node image {
+    opacity: 1;
+
+    border: 1px solid #000;
+    border-radius: 4px;
+  }
+
+  .node:hover image {
+    height: auto;
+    width: 250px;
+    z-index: 10;
+    opacity: 1; 
+
+
+  }
+
+  .node.node--internal text { 
+    color: #DBAEEC;
+    opacity: 1;
+  }
+
+  .node.node--internal circle { 
+    r: 4px;
+  }
+
+  .node.node--internal:hover text {
+    color: black;
+    opacity: 1;
+    z-index: 999; /* wont work until positioned */
+  }
+
+  .node.node--leaf text, .node.node--internal-root text {
+    color: red;
+    opacity: 1;
+  }
+
+  /* select the image within every other g */
+  .node:nth-child(odd):hover image {
+    x: 10%;
+  }
+
+  .node.node--internal:nth-child(even):hover image {
+    x: -30%;
+  }
+
+
+  .link {
+    fill: none;
+    stroke: #DBAEEC;
+    stroke-width: 2px;
+  }
+
+
+  g image {
+    /* relative to the node */
+
+    position: absolute;
+    top: 0;
+    height: auto;
+    width: 40px;
+
+    border-radius: 4px;
+  }
+
+
+  .delete {
+    background-color: maroon;
+    color: #fff;
+  }
+
+
 }
