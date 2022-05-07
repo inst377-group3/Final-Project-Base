@@ -1011,6 +1011,7 @@ g image {
     flex-direction: column;
     align-items: center;
 
+
 }
 
   .query {
@@ -1025,7 +1026,7 @@ g image {
   } 
 
   svg {
-    margin: .4rem;
+    margin: 5rem;
     border: #fff;
     border-radius: 24px;
     background-color: #fff;
@@ -1094,15 +1095,15 @@ g image {
 
   .node.node--internal-root:hover image {
     y: 10%;
-    x: -10%;
+    x: -20%;
   }
 
   .node.node--internal:nth-child(odd):hover image {
-    x: -30%;
+    x: 10%;
   }
 
   .node.node--internal:nth-child(even):hover image {
-    x: 10%;
+    x: -50%;
   }
 
 

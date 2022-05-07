@@ -323,8 +323,8 @@ async function displayEach(searchItem, index) {
     //editBtn.id = searchTree.
     container.appendChild(newNode)
     var margin = {top: 40, right: 20, bottom: 80, left: 20},
-            width = 200 - margin.left - margin.right,
-            height = 400 - margin.top - margin.bottom;
+            width = 400 - margin.left - margin.right,
+            height = 800 - margin.top - margin.bottom;
         // declares a tree layout and assigns the size
         var treemap = d3.tree()
             .size([width, height]);
@@ -382,8 +382,8 @@ async function displayEach(searchItem, index) {
         // appending image url to the node
         node.append('image')
             .attr("href", function (d) { return d.data.image + '?width=300px' })
-            .attr('x', '-20')
-            .attr('y', '-60')
+            .attr('x', '0')
+            .attr('y', '0')
             //.attr('transform', 'rotate(90)')
         // rotates elements horizontally
         //svg.attr('transform', 'rotate(-90)')
